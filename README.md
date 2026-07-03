@@ -106,7 +106,6 @@ This final page converts insights into intervention priorities: immediate interv
 - Action plan page for decision-making
 - Star-schema semantic model
 - DAX measure catalog for KPIs, targets, and status indicators
-- Dev -> Stage -> Prod deployment-ready structure
 
 ---
 
@@ -364,40 +363,6 @@ SWITCH (
 
 ---
 
-## Deployment Architecture
-
-Recommended Power BI Service deployment structure:
-
-```text
-Development Workspace
-        ↓
-Stage Workspace
-        ↓
-Production Workspace
-        ↓
-Power BI App
-```
-
-### Workspace Naming
-
-| Stage | Workspace |
-|---|---|
-| Development | `Teen Digital Wellbeing - DEV` |
-| Stage | `Teen Digital Wellbeing - STAGE` |
-| Production | `Teen Digital Wellbeing - PROD` |
-
-### Deployment Best Practices
-
-- Publish PBIX only to DEV.
-- Deploy Report + Semantic Model together.
-- Use **Select related** in deployment pipeline.
-- Disable partial deployment if one item fails.
-- Validate Stage before promoting to Production.
-- Create or update Power BI App only from Production workspace.
-- Keep Build permission off for portfolio/recruiter audiences.
-
----
-
 ## Power BI App Configuration
 
 Recommended app setup:
@@ -405,7 +370,7 @@ Recommended app setup:
 | Setting | Value |
 |---|---|
 | App Name | `Teen Digital Wellbeing Analytics` |
-| Source Workspace | Production |
+| Source Workspace | Development |
 | Audience | Portfolio / Recruiter View |
 | Permission | View only |
 | Build with semantic model | Off |
@@ -419,7 +384,6 @@ This project uses synthetic/static data. For portfolio use:
 
 - Keep scheduled refresh off unless the source is moved to OneDrive, SharePoint, Lakehouse, or a gateway-supported location.
 - If using deployment pipelines, verify semantic model credentials in each workspace.
-- If visuals break after deployment, clean the Stage/Prod workspace and redeploy the report and semantic model together.
 
 ---
 
@@ -427,7 +391,6 @@ This project uses synthetic/static data. For portfolio use:
 
 | Issue | Likely Cause | Fix |
 |---|---|---|
-| Visuals work in DEV but break in STAGE | Report not correctly bound to semantic model | Delete broken STAGE items and redeploy using Select related |
 | Semantic model not visible in app content | Expected behaviour | Add report only; semantic model stays behind the report |
 | Forecast cards error | KPI visual used with fixed 2060 measure | Use Card visual instead of KPI visual |
 | Warning icons in model view | Service metadata/model warning | Validate report visuals and refresh history |
@@ -467,9 +430,8 @@ This project uses synthetic/static data. For portfolio use:
 1. Open the `.pbix` file in Power BI Desktop.
 2. Review and refresh the model.
 3. Publish to DEV workspace.
-4. Deploy DEV -> STAGE -> PROD using deployment pipelines.
-5. Validate the Production report.
-6. Create or update the Power BI App from Production workspace.
+4. Validate the Production report.
+5. Create or update the Power BI App from Production workspace.
 
 ---
 
