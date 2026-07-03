@@ -89,7 +89,7 @@ This page shows projected addiction and mental health risk for 2030, 2040, 2050,
 
 ### 10. Action Plan
 
-![Action Plan](assets/screenshots/12_action_plan.png)
+![Action Plan](assets/screenshots/10_action_plan.png)
 
 This final page converts insights into intervention priorities: immediate intervention, high-priority monitoring, actionable groups, intervention areas, and action matrix.
 
