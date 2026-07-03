@@ -12,7 +12,7 @@
 The dashboard is designed as an executive analytics solution with interactive navigation, slicers, KPI cards, trend analysis, risk segmentation, country-level insights, and business action recommendations.
 
 > Dataset type: Synthetic teen behaviour dataset  
-> Report pages included: Pages **1-9 and 12 Action Plan**  
+> Report pages included: Pages **1-10**  
 > Main tool: Microsoft Power BI Desktop + Power BI Service
 
 ---
@@ -123,7 +123,7 @@ This final page converts insights into intervention priorities: immediate interv
 | 07 | Online Safety | Cyberbullying, harmful content, harassment, privacy risk |
 | 08 | Geography Risk | Country, continent, region, and income-group risk analysis |
 | 09 | Forecast Analysis | Projected addiction and mental risk through 2060 |
-| 12 | Action Plan | Intervention priorities and action matrix |
+| 10 | Action Plan | Intervention priorities and action matrix |
 
 ---
 
@@ -455,7 +455,7 @@ This project uses synthetic/static data. For portfolio use:
 │       ├── 07_online_safety.png
 │       ├── 08_geography_risk.png
 │       ├── 09_forecast_analysis.png
-│       └── 12_action_plan.png
+│       └── 10_action_plan.png
 └── data/
     └── source files or dataset reference
 ```
